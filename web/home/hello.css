@@ -1,0 +1,102 @@
+/*gradients*/
+:root {
+    --helloblue: #f5f5f5;
+    --helloyellow: #ffbf37;
+    --hellopink: #ff8179;
+}
+
+body {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+/*container divs*/
+.page-header {
+    /*background-color: var(--darkcream)*/
+}
+
+#all-content-container {
+    height: 100vh;
+    z-index: 100;
+}
+
+#nested-container {
+    height: 7em;
+}
+
+/*text stuff*/
+#subtitle {
+    color: var(--text-red);
+    font-size: 2.5em;
+    font-family: var(--grand);
+}
+
+#titleText {
+    color: var(--card-red);
+    font-family: var(--rubik);
+    font-size: 5em;
+    text-shadow: 0.05em 0.05em var(--text-red);
+}
+
+/*navbar*/
+.navbar-toggler {
+    background-color: rgba(0,0,0,0);
+    font-family: var(--rubik);
+}
+
+.nav-item {
+    color: var(--card-red) !important;
+}
+
+
+/*grain effect stuff*/
+.page-header:after {
+    animation: grain 8s steps(10) infinite;
+    background-image: url("../../images/grain.png");
+    /*background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/paper-pattern.png");*/
+    content: "";
+    height: 300%;
+    left: -50%;
+    opacity: 0.2;
+    position: fixed;
+    top: -110%;
+    width: 300%;
+    z-index: -1;
+}
+
+@keyframes grain {
+    0%, 100% {
+        transform: translate(0, 0)
+    }
+    10% {
+        transform: translate(-5%, -10%)
+    }
+    20% {
+        transform: translate(-15%, 5%)
+    }
+    30% {
+        transform: translate(7%, -25%)
+    }
+    40% {
+        transform: translate(-5%, 25%)
+    }
+    50% {
+        transform: translate(-15%, 10%)
+    }
+    60% {
+        transform: translate(15%, 0%)
+    }
+    70% {
+        transform: translate(0%, 15%)
+    }
+    80% {
+        transform: translate(3%, 35%)
+    }
+    90% {
+        transform: translate(-10%, 10%)
+    }
+}
+
+
+.simple-border {
+    box-shadow: 0 0 10px #000000;
+}

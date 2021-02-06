@@ -1,0 +1,9 @@
+.header {
+    color: var(--blue);
+    font-family: var(--rubik);
+    text-shadow: 0.05em 0.05em var(--darkblue);
+}
+
+a, small {
+    color: var(--darkblue);
+}

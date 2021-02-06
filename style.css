@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Darker+Grotesque:wght@300;400;600&family=Fugaz+One&family=Lobster&display=swap&family=Rubik+Mono+One&display=swap&family=Grand+Hotel&display=swap');
+
+/*--main--*/
+:root {
+    /*font types*/
+    --grand: 'Grand Hotel', cursive;
+    --rubik: 'Rubik Mono One', sans-serif;
+    --lobster: 'Lobster', cursive;
+    --abel: 'Abel', sans-serif;
+    --grotesque: 'Darker Grotesque', sans-serif;
+    --fugaz: 'Fugaz One', cursive;
+    --card-red: #a85a58;
+    --text-red: #4c2c1d;
+    --offwhite: #f5f5f5;
+    --creamwhite: #F9EDD4;
+    --darkcream: #dfae4e;
+    --green: #DBDFBC;
+    --sagegreen: #679787;
+    --blue: #77A8B9;
+    --darkblue: #155976;
+    --purple: #707695;
+}
+
+body {
+    color: var(--text-red);
+    font-family: var(--grotesque);
+    font-size: 1.5em;
+    background-color: var(--offwhite);
+}
+
+h1 {
+    font-family: var(--rubik);
+}
+
+h3 {
+    font-weight: 400;
+}
+
+hr {
+    border: none;
+    border-top: 0.5em dotted var(--text-red);
+    mso-border-shadow: yes;
+    color: #fff;
+    height: 10px;
+    width: 100%;
+}
+
+p {
+    font-size: 1em;
+    font-weight: 600;
+}
+
+small {
+    font-size: 1.1em;
+}
+
+
+/*title of each page*/
+.page-title {
+    font-size: 3rem;
+    color: var(--card-red);
+}
+
+/*--navbar--*/
+.nav-item, .nav-link {
+    font-size: 2.2em;
+    color: var(--card-red) !important;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--grand);
+}
+
+.nav-row {
+    background: var(--offwhite);
+}
+
+/*the sandwich bar*/
+.navbar-toggler {
+    background-color: var(--offwhite);
+}
+
+.active {
+    /*background-color: var(--darkcream);*/
+    /*color: var(--offwhite) !important;*/
+    border-bottom: dotted .1em var(--card-red);
+}
+
+
+/*--buttons--*/
+.btn {
+    font-size: 1.2rem;
+    color: var(--offwhite) !important;
+    border-radius: 0;
+}
+
+/*in card*/
+.btn-card {
+    background-color: var(--offwhite) !important;
+    color: var(--card-red) !important;
+}
+
+/*--responsiveness for other sizes--*/
+
+/*column count in card-columns*/
+@media (min-width: 768px) {
+    .card-columns {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+    }
+}
+
+@media (min-width: 992px) {
+    .card-columns {
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
+    }
+}
+
+@media (min-width: 1200px) {
+
+}
+
+/*@media (min-width: 75em) {*/
+/*.card-columns {*/
+/*-webkit-column-count: 5;*/
+/*-moz-column-count: 5;*/
+/*column-count: 5;*/
+/*}*/
+/*}*/
+
+
