@@ -7,12 +7,13 @@
     object-fit: cover;
 }
 
-.card-img-overlay {
+.card-text-overlay {
+    position: fixed;
     background-color: #679787;
     -webkit-filter: opacity(0);
 }
 
-.card-img-overlay:hover {
+.card-text-overlay:hover {
     -webkit-filter: opacity(100%);
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
@@ -37,4 +38,9 @@
 /*--fontawesome--*/
 .fa-file-pdf, .fa-github {
     color: var(--offwhite);
+}
+
+.card {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
