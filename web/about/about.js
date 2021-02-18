@@ -51,7 +51,8 @@ function generateTimeline() {
     function generateSmallScreenTimeline(color, entry, key) {
         //generate card containing all content
         let card = $("<div>", {
-            "class": "card w-100"
+            "class": "card w-100",
+            "style": "border: none;"
         });
         //button that collapses/opens accordion
         let btn = $("<button>", {
