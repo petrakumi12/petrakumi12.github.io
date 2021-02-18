@@ -16,8 +16,7 @@
     </script>
     <meta charset="UTF-8">
     <title>Projects</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
     <script src="https://d3js.org/d3.v6.min.js"></script>
@@ -25,6 +24,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
             integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
             crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.0/js/bootstrap.min.js"
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
@@ -36,11 +37,13 @@
     <link rel="stylesheet" href="style.css">
 
     <script src="../../masterScript.js"></script>
+    <script src="../../grid.js"></script>
     <script src="projects.js"></script>
 </head>
 <body>
 <!--navbar-->
 <div class="row nav-row w-100 justify-content-center m-0 p-0">
+
     <nav class="navbar navbar-expand-lg navbar-light" data-aos="fade-down">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,19 +53,29 @@
             <div class="navbar-nav">
                 <a class="nav-item nav-link" href="../../index.html">Home</a>
                 <a class="nav-item nav-link" href="../about/about.html">About Me</a>
-                <a class="nav-item nav-link active" href="projects.html">Projects<span
-                        class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link " href="projects.html">Projects<span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="../gallery/photos.html">Gallery</a>
                 <a class="nav-item nav-link" href="../contact/contact.html">Contact</a>
             </div>
         </div>
     </nav>
-</div>
-<!--end navbar-->
-<div class="row w-100 align-items-center justify-content-center">
-    <div class="col-lg-8">
-        <div class="card-columns my-5" id="data-cards"></div>
-    </div>
-</div>
+
+    <!--end navbar-->
+    <!--<div class="container">-->
+    <div class="row w-100 no-gutters align-items-center justify-content-center">
+        <!--<div class="container-lg" id="data-cards">-->
+            <!--<div class="m-auto">-->
+                <div class="row w-100 no-gutters align-items-top justify-content-center" id="data-cards">
+                    <div class="col-md-3 p-3" id="col1">
+                    </div>
+                    <div class="col-md-3 p-3" id="col2">
+                    </div>
+                    <div class="col-md-3 p-3" id="col3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!--</div>-->
+
 </body>
 </html>

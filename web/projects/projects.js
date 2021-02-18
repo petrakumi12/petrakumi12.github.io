@@ -11,9 +11,11 @@ let colorArray = [
 
 
 window.onload = e => {
+
     AOS.init();
+    restoreCurColNo();
     loadEntries().then(e => {
-        generateAllEntryCards();
+        updateGrid(allEntries, "card")
     });
 };
 
@@ -25,17 +27,6 @@ let loadEntries = async function () {
         .then(response => allEntries = response)
 };
 
-/**
- * Generates UI cards for all entries on the responses object
- */
-let generateAllEntryCards = function () {
-    let maxKey = Object.keys(allEntries).length;
-    for (let key in Object.keys(allEntries)) {
-        if (parseInt(key) < maxKey - 1) {
-            generateEntryCard(allEntries[key])
-        }
-    }
-};
 
 /** Generates random number between min and max
  * @param min minimum number of range
@@ -73,13 +64,13 @@ function generateEntryCard(entryData) {
     });
     //image
     let entryImg = $("<img />", {
-        "class": "card-img-top card-image",
+        "class": "card-image",
         "src": imgRoot + entryData["Image"],
-        "style": "opacity: " + 0.9 + "; outline: 3px solid " + theColor
+        "style": "z-index: -1; opacity: " + 0.9 + "; outline: 3px solid " + theColor
     });
     //div that will contain text that will show on hover
     let textOverlay = $("<div />", {
-        "class": "card-img-overlay text-center row no-gutters justify-content-center align-items-center py-5",
+        "class": "card-text-overlay text-center row no-gutters justify-content-center align-items-center py-5",
         "style": "background-color: " + theColor
     }).hide();
     //date text
@@ -93,7 +84,7 @@ function generateEntryCard(entryData) {
     //description text
     let description = $("<small />", {
         "class": "row w-100 my-2 text-white justify-content-center"
-    }).html(entryData["Description"]);
+    }).text(entryData["Description"]);
     //title text
     let entryTitle = $("<h2 />", {
         "class": "row w-100 card-title justify-content-center",
@@ -125,21 +116,30 @@ function generateEntryCard(entryData) {
         }
     }
 
-    entryCard.append(entryImg);
-    entryCard.append(textOverlay);
-    textOverlay.append(org);
-    textOverlay.append(entryTitle);
-    textOverlay.append(date);
-    textOverlay.append(description);
+    if (isLargeScreen()) {
+        entryCard.append(entryImg);
+        entryCard.append(textOverlay);
+        textOverlay.append(org);
+        textOverlay.append(entryTitle);
+        textOverlay.append(date);
+        textOverlay.append(description);
+    }
+
+    if (isSmallScreen() || isMediumScreen()) {
+        textOverlay.append(entryTitle);
+    }
+
+
     textOverlay.append(logosContainer);
-    $("#data-cards").append(entryCard);
-
-    entryCard.css("height", entryCard.width());
-    entryCard.css("minHeight", entryCard.width());
-    entryImg.css("height", entryCard.width());
-    textOverlay.css("height", entryCard.width());
-
     addCardMouseInteractions(entryCard);
+
+    return entryCard
+}
+
+function assignCardHeight(entryCard) {
+    $(".card").css("height", entryCard.width());
+    $(".card-image").css("height", entryCard.width());
+    $(".card-text-overlay").css("height", entryCard.width());
 }
 
 /**
@@ -147,6 +147,9 @@ function generateEntryCard(entryData) {
  * @param entryCard the card to add effect on
  */
 let addCardMouseInteractions = function (entryCard) {
-    entryCard.on("mouseover", e => entryCard.find(".card-img-overlay").show());
-    entryCard.on("mouseout", e => entryCard.find(".card-img-overlay").hide());
+    entryCard.on("mouseover", e => {
+        console.log("over");
+        entryCard.find(".card-text-overlay").show()
+    });
+    entryCard.on("mouseout", e => entryCard.find(".card-text-overlay").hide());
 };

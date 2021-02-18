@@ -3,7 +3,6 @@ img {
 }
 
 p {
-    font-size: 1.1em;
     color: var(--blue);
     filter: brightness(50%);
 }

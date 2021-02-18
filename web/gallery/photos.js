@@ -6,8 +6,6 @@ let heightThresholdVal = 0.1;
 let stopProcessing = false;
 let processing = false;
 let lastScrollTop = false;
-let curCol = 1;
-let ID_LENGTH = 5;
 let photoSizes = [100, 300, 500, 750, 1000, 1500, 2500];
 
 //generates url of lambda function api gateway that interacts with s3
@@ -47,7 +45,7 @@ function loadMorePhotos() {
             .then(_ => {
                 if (photoData.length > 0) {
                     updatePhotoIdx();
-                    updatePhotoGrid();
+                    updateGrid(photoData, "image");
                     hideLoadingIcon();
                     processing = false;
                 }
@@ -77,20 +75,10 @@ async function getPhotoLinks() {
         });
 }
 
-/**
- * Adds all new photos and only shows them once adding has finished
- */
-function updatePhotoGrid() {
-    console.log(photoData.length);
-    let onePhoto = photoData.pop();
-    while (onePhoto !== undefined) {
-        addOnePhoto(onePhoto);
-        onePhoto = photoData.pop();
-    }
-}
 
 /**
  * Adds one photo to dom
+ * @return image, generated dom element for image from given link
  */
 function addOnePhoto(link) {
     console.log(curCol);
@@ -102,12 +90,7 @@ function addOnePhoto(link) {
         "data-aos": "zoom-in",
         "onclick": "openNav(this)"
     });
-    $("#col" + curCol).append(image);
-    if (curCol < 3) {
-        curCol += 1;
-    } else {
-        curCol = 1;
-    }
+    return image;
 }
 
 /**
@@ -140,7 +123,6 @@ function detectBottomReached() {
     let curUserLocation = ($(document).scrollTop() + $(window).height());
     let heightThreshold = $(document).height() * heightThresholdVal;
     return curUserLocation >= heightThreshold;
-
 }
 
 /**
@@ -213,7 +195,6 @@ function openNav(element) {
  * Close when someone clicks on the "x" symbol inside the overlay
  */
 function closeNav() {
-
     let nav = $("#myNav");
     nav.css("width", "0");
     nav.empty();
@@ -224,7 +205,6 @@ function closeNav() {
  * return new image size
  */
 function updatePhotoSize() {
-
     let windowSize = Math.min(window.innerWidth, window.innerHeight);
     console.log("threshold is", windowSize);
     for (let i = 0; i < photoSizes.length; i++) {
