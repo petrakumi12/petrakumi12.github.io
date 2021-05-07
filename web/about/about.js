@@ -143,8 +143,8 @@ function generateTimeline() {
         });
         //container of text
         let textContainer = $("<div />", {
-            "class": "row w-50 d-flex align-items-center justify-content-center text-col-" + orientation,
-            "style": "transform: translate(" + aosOffset + "); background-color: " + color
+            "class": "row w-50 d-flex text-container align-items-center justify-content-center text-col-" + orientation,
+            "style": "transform: translate(" + aosOffset + "); background-color: rgba(0,0,0,0);"
         });
         //container of date text
         let dateContainer = $("<div />", {
@@ -194,8 +194,8 @@ function generateTimeline() {
         if (orientation === "right") {
             linePosition = "5%";
         }
-        let line = $("<div />", {"class": "vertical-line", "style": "left: " + linePosition});
-        textContainer.append(line);
+        // let line = $("<div />", {"class": "vertical-line", "style": "left: " + linePosition});
+        // textContainer.append(line);
 
         $("#timeline").append(container);
     }
