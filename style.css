@@ -24,7 +24,6 @@
 body {
     color: var(--text-red);
     font-family: var(--grotesque);
-    font-size: 1.5em;
     background-color: var(--offwhite);
 }
 
@@ -63,7 +62,7 @@ small {
 
 /*--navbar--*/
 .nav-item, .nav-link {
-    font-size: 2.2em;
+    font-size: 2.2rem;
     color: var(--card-red) !important;
     margin-left: 0.5em;
     margin-right: 0.5em;
@@ -78,10 +77,10 @@ small {
     background: var(--offwhite);
 }
 
-/*the sandwich bar*/
-.navbar-toggler {
-    background-color: var(--offwhite);
-}
+/*!*the sandwich bar*!*/
+/*.navbar-toggler {*/
+/*    background-color: var(--offwhite);*/
+/*}*/
 
 .active {
     /*background-color: var(--darkcream);*/
@@ -114,16 +113,26 @@ small {
     }
 }
 
+@media (max-width: 768px) {
+    #titleText {
+        font-size: 3rem !important;
+    }
+
+    #subtitle {
+        font-size: 2rem !important;
+    }
+
+    .nav-item, .nav-link {
+        font-size: 1.7rem !important;
+    }
+}
+
 @media (min-width: 992px) {
     .card-columns {
         -webkit-column-count: 3;
         -moz-column-count: 3;
         column-count: 3;
     }
-}
-
-@media (min-width: 1200px) {
-
 }
 
 /*@media (min-width: 75em) {*/

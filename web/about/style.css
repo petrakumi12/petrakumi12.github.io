@@ -8,6 +8,7 @@ p {
 }
 
 /*text on timeline cards*/
+
 .text-col-right {
     transform: translate(-5%, 0);
     background-color: var(--blue);
@@ -68,3 +69,19 @@ p {
     background-color: #41403E;
     filter: brightness(50%);
 }
+
+
+@media (max-width: 768px) {
+    .text-container {
+        width: 100%;
+    }
+
+    .nav-item, .nav-link {
+        font-size: 1.1rem !important;
+    }
+
+    .btn {
+        font-size: 1rem;
+    }
+}
+

@@ -1,5 +1,6 @@
 /*--cards--*/
 .card-title {
+    font-size: 1.5rem;
     font-weight: 600;
 }
 
@@ -8,6 +9,7 @@
 }
 
 .card-text-overlay {
+    font-size: 1rem;
     position: fixed;
     background-color: #679787;
     -webkit-filter: opacity(0);
@@ -25,7 +27,7 @@
 .card {
     border-radius: 0;
     transition: all 0.3s ease;
-     margin-top: 2rem;
+    margin-top: 2rem;
     margin-bottom: 2rem;
 }
 
@@ -42,3 +44,17 @@
     color: var(--offwhite);
 }
 
+
+
+@media (max-width: 768px) {
+    .card-title {
+        font-size: 1rem !important;
+    }
+
+    /*.card-text-overlay {*/
+    /*    font-size: .8rem !important;*/
+    /*    padding-top: 0 !important;*/
+    /*    padding-bottom: 0 !important;*/
+
+    /*}*/
+}
