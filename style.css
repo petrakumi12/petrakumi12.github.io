@@ -45,7 +45,7 @@ hr {
 }
 
 p {
-    font-size: 1.1em;
+    font-size: 1.3em;
     font-weight: 600;
 }
 
@@ -78,9 +78,16 @@ small {
 }
 
 /*!*the sandwich bar*!*/
-/*.navbar-toggler {*/
-/*    background-color: var(--offwhite);*/
-/*}*/
+.navbar-toggler {
+    background-color: var(--offwhite);
+    border-style: dotted;
+    /*width: 3rem;*/
+    /*height: 3rem;*/
+}
+
+.navbar-toggler-icon {
+    width: 1.3rem;
+}
 
 .active {
     /*background-color: var(--darkcream);*/
@@ -124,7 +131,68 @@ small {
 
     .nav-item, .nav-link {
         font-size: 1.7rem !important;
+        align-content: center;
+        align-self: center;
+        padding-top: .5em;
+        color: var(--offwhite) !important;
+        font-weight: lighter !important;
+
     }
+    .navbar {
+        justify-content: end !important;
+        background: var(--darkcream);
+    }
+
+    .navbar-collapse {
+        max-height: none;
+    }
+
+    .nav-row {
+        max-height: 100vh;
+    }
+
+    .navbar-expand-lg {
+        width: 100vw;
+        align-content: end !important;
+    }
+
+    .button, .navbar-toggler {
+        align-self: end !important;
+        align-content: end !important;
+        background: var(--darkcream);
+        border: none !important;
+    }
+
+    .navbar-toggler:focus {
+        border: none !important;
+        outline: none !important;
+    }
+
+    .navbar-nav {
+        /*margin-top: 2em;*/
+        margin-bottom: 2em;
+    }
+
+    .active {
+        border-bottom: dotted .1em var(--offwhite);
+    }
+
+    #photoContainer, .photorow {
+        padding: 0 0 0 0 !important;
+    }
+
+    .card-title {
+        font-size: 1rem !important;
+    }
+
+
+    /*.card-text-overlay {*/
+    /*    font-size: .8rem !important;*/
+    /*    padding-top: 0 !important;*/
+    /*    padding-bottom: 0 !important;*/
+
+    /*}*/
+
 }
 
 @media (min-width: 992px) {
@@ -132,6 +200,10 @@ small {
         -webkit-column-count: 3;
         -moz-column-count: 3;
         column-count: 3;
+    }
+
+    #portrait {
+        width: 50% !important;
     }
 }
 

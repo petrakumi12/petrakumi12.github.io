@@ -72,7 +72,7 @@ function generateTimeline() {
         //title text
         let title = $("<h3 />", {
             "class": "my-0 mx-3",
-            "style": "font-size: 1.5em; font-family: var(--rubik); text-shadow: 0.05em 0.05em " + darkenColor(colorDict[color], -120) + "; color: " + color
+            "style": "font-size: 1.7em; font-family: var(--rubik); text-shadow: 0.05em 0.05em " + darkenColor(colorDict[color], -120) + "; color: " + color
         }).text(entry["Title"]);
         //date text
         let date = $("<h4 />", {
@@ -153,7 +153,7 @@ function generateTimeline() {
         //title text
         let title = $("<h3 />", {
             "class": "my-0 mx-3",
-            "style": "font-size: 1.5em; font-family: var(--rubik); text-shadow: 0.05em 0.05em " + darkenColor(colorDict[color], -120) + "; color: " + color
+            "style": "font-size: 1.7em; font-family: var(--rubik); text-shadow: 0.05em 0.05em " + darkenColor(colorDict[color], -120) + "; color: " + color
         }).text(entry["Title"]);
         //date text
         let date = $("<h4 />", {
