@@ -34,7 +34,7 @@ p {
 
 /*my photo*/
 #portrait {
-    width: 60%;
+    width: 0;
     float: left;
     /*background: orange;*/
     object-fit: cover;
@@ -76,12 +76,22 @@ p {
         width: 100%;
     }
 
-    .nav-item, .nav-link {
-        font-size: 1.1rem !important;
-    }
+    /*.nav-item, .nav-link {*/
+        /*font-size: 1.1rem !important;*/
+    /*}*/
 
     .btn {
         font-size: 1rem;
     }
+
+    .container {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    .top-text {
+        text-align: center;
+    }
+
 }
 
