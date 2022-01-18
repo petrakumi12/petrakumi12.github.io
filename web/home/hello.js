@@ -27,9 +27,15 @@ window.onload = _ => {
         AOS.init();
     }, 200);
 
-    setTimeout(function () {
-        typeCode();
-    }, 600)
+    if (width < 768) {
+        $(".typed").text("code ");
+
+    } else {
+        setTimeout(function () {
+            typeCode();
+        }, 600)
+    }
+
 
 };
 

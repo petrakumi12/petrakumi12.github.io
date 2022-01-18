@@ -47,6 +47,10 @@ body {
     color: var(--card-red) !important;
 }
 
+.navbar {
+    background: none;
+}
+
 
 /*grain effect stuff*/
 .page-header:after {
